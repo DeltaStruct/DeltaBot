@@ -9,7 +9,7 @@ class line:
     def send(self, api_element):
         headers = {'Authorization': f'Bearer {self.api_key}'}
         data = {'message': f'message: {api_element}'}
-        requests.post(send.api_send_key, headers = headers, data = data)
+        api.post(send.api_send_key, headers = headers, data = data)
 
 def main():
     line.send("test")
