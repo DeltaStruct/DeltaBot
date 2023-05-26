@@ -21,7 +21,7 @@ jobs:
         run: |
           # pip更新
           python -m pip install --upgrade pip
-          # 必要なパッケージインストール・・・②
+          # 必要なパッケージインストール・・・② 
           pip install requests
 
       - name: Run script
