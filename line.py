@@ -1,7 +1,7 @@
 import os
 import requests as api
 
-class line:
+class line_class:
     def __init__(self):
         self.api_key = os.environ["Line_Notify_API_Key"]
         self.api_send_url = f"https://notify-api.line.me/api/notify"
@@ -12,6 +12,7 @@ class line:
         api.post(send.api_send_key, headers = headers, data = data)
 
 def main():
+    line = line_class()
     line.send("test")
 
 if __name__ == "__main__":
