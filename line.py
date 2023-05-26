@@ -13,7 +13,7 @@ class line_class:
 
 def main():
     line = line_class()
-    line.send("test")
+    line.send("test\ntest")
 
 if __name__ == "__main__":
     main()
