@@ -1,6 +1,6 @@
 # ワークフロー名
 name: housework_bot
-on:
+on: push
   #schedule:
     # 定期実行する時間・・・①
     #- cron: '* * * * *'
@@ -28,3 +28,5 @@ jobs:
         run: |
           # 定期実行するファイルを指定。・・・③
           python line.py
+        env:
+          Line_Notify_API_Key: ${{secrets.Line_Notify_API_Key}}  ## ※2
