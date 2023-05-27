@@ -5,7 +5,7 @@ import sys
 
 from slack_bolt import App
 from slack_bolt.adapter.socket_mode import SocketModeHandler
-　
+ 
 class slack_api:
     def __init__(self):
         self.app = App(token=os.environ["Slack_BOT_API_Key"])
