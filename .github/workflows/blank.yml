@@ -25,7 +25,7 @@ jobs:
           pip install requests
           pip install slack_bolt
           pip install certifi
-          export NEWENV=$(python3 -m certifi)
+          export SSL_CERT_FILE=$(python3 -m certifi)
 
       - name: Run script
         run: |
