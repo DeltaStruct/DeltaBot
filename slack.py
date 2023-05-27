@@ -5,7 +5,7 @@ import os
 from slack_sdk.web import WebClient
 class slack_api:
     def __init__(self):
-        self.client = WebClient(token=os.environ["Slack_API_Key"])
+        self.client = WebClient(token=os.environ["Slack_BOT_API_Key"])
     def test(self):
         self.response = self.client.chat_postMessage(text=":wave: こんにちは！", channel="#random")
         print(self.response)
