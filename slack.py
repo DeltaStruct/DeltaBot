@@ -10,21 +10,14 @@ class slack_api:
     def __init__(self):
         self.app = App(token=os.environ["Slack_BOT_API_Key"])
         SocketModeHandler(self.app, os.environ["Slack_APP_API_Key"]).start()
-        print(3)
-        sys.exit(0)
     def test(self):
         time_now = datetime.datetime.now().strftime("%H時%M分%S秒")
-        print(4)
         say("test\n現在時刻:" + time_now)
     def send(self, msg):
         say(msg)
 def main():
     slack = slack_api()
-    print(4)
-    sys.exit(0)
     slack.test()
-    print(5)
-    sys.exit(0)
 if __name__ == "__main__":
     main()
     sys.exit(0)
