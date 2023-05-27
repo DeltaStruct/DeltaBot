@@ -13,6 +13,8 @@ class slack_api:
         say("test\n現在時刻" + time_now)
     def send(self, mes):
         say(mes)
+def main():
+    slackapi=slack_api()
+    slackapi.test()
 if __name__ == "__main__":
-  #slack = slack_api()
-  #slack.test()
+  main()
