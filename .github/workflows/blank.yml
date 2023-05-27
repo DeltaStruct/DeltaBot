@@ -23,10 +23,14 @@ jobs:
           python -m pip install --upgrade pip
           # 必要なパッケージインストール・・・② 
           pip install requests
+          pip install slack_bolt
 
       - name: Run script
         run: |
           # 定期実行するファイルを指定。・・・③
           python line.py
+          python slack.py
         env:
-          Line_Notify_API_Key: ${{secrets.Line_Notify_API_Key}}  ## ※2
+          Line_Notify_API_Key: ${{secrets.Line_Notify_API_Key}}
+          Slack_BOT_API_Key: ${{secrets.Slack_BOT_API_Key}}
+          Slack_APP_API_Key: ${{secrets.Slack_APP_API_Key}}
