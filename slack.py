@@ -18,10 +18,9 @@ class slack_api:
     def send(self, msg):
         say(msg)
 def main():
-    print(1)
-    sys.exit(0)
     slack = slack_api()
     print(3)
+    sys.exit(0)
     slack.test()
     print(5)
     sys.exit(0)
