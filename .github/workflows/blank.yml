@@ -24,6 +24,8 @@ jobs:
           # 必要なパッケージインストール・・・② 
           pip install requests
           pip install slack_bolt
+          pip install certifi
+          export NEWENV= python3 -m certifi
 
       - name: Run script
         run: |
