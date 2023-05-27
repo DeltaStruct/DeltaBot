@@ -9,9 +9,9 @@ from slack_bolt.adapter.socket_mode import SocketModeHandler
 class slack_api:
     def __init__(self):
         self.app = App(token=os.environ["Slack_BOT_API_Key"])
-        print(2)
-        sys.exit(0)
         SocketModeHandler(self.app, os.environ["Slack_APP_API_Key"]).start()
+        print(3)
+        sys.exit(0)
     def test(self):
         time_now = datetime.datetime.now().strftime("%H時%M分%S秒")
         print(4)
@@ -20,7 +20,7 @@ class slack_api:
         say(msg)
 def main():
     slack = slack_api()
-    print(3)
+    print(4)
     sys.exit(0)
     slack.test()
     print(5)
