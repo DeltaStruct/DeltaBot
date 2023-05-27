@@ -15,4 +15,4 @@ class slack_api:
         say(mes)
 if __name__ == "__main__":
   slack = slack_api()
-  slack.test()
+  #slack.test()
