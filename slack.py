@@ -17,4 +17,5 @@ def main():
     slackapi=slack_api()
     slackapi.test()
 if __name__ == "__main__":
-  main()
+   print(os.environ["SSL_CERT_FILE"]) 
+  #main()
