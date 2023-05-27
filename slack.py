@@ -14,7 +14,7 @@ def test(self):
 def send(self, msg):
     say(msg)
 def main():
-    SocketModeHandler(self.app, os.environ["Slack_APP_API_Key"]).start()
+    SocketModeHandler(app, os.environ["Slack_APP_API_Key"]).start()
 if __name__ == "__main__":
     main()
     sys.exit(0)
