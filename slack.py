@@ -7,7 +7,7 @@ class slack_api:
     def __init__(self):
         #アプリの初期化
         self.app = App(token=os.environ['Slack_BOT_API_Key'])
-        SocketModeHandler(app, os.environ['Slack_APP_API_Key']).start()
+        SocketModeHandler(self.app, os.environ['Slack_APP_API_Key']).start()
     def test(self):
         time_now = datetime.datetime.now().strftime("%H時%M分%S秒")
         say("test\n現在時刻" + time_now)
