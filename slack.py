@@ -14,5 +14,5 @@ class slack_api:
     def send(self, mes):
         say(mes)
 if __name__ == "__main__":
-  slack = slack_api()
+  #slack = slack_api()
   #slack.test()
