@@ -24,16 +24,18 @@ jobs:
           # 必要なパッケージインストール・・・② 
           pip install requests
           pip install slack_bolt
+          pip install pybit
           pip install certifi
+          pip install json
           python3 -m certifi
           export SSL_CERT_FILE=$(python3 -m certifi)
 
       - name: Run script
         run: |
           # 定期実行するファイルを指定。・・・③
-          python line.py
-          python slack.py
+          python bybit.py
         env:
           Line_Notify_API_Key: ${{secrets.Line_Notify_API_Key}}
           Slack_BOT_API_Key: ${{secrets.Slack_BOT_API_Key}}
           Slack_APP_API_Key: ${{secrets.Slack_APP_API_Key}}
+          Slack_Webhook_URL: ${{secrets.Slack_Webhook_URL}}
