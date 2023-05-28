@@ -26,7 +26,6 @@ jobs:
           pip install slack_bolt
           pip install pybit
           pip install certifi
-          pip install json
           python3 -m certifi
           export SSL_CERT_FILE=$(python3 -m certifi)
 
