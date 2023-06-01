@@ -29,7 +29,7 @@ class bybit_api:
         self.session = HTTP(
             # HTTP requests
             test = is_test,
-            api_key = self.api_key,m
+            api_key = self.api_key,
             api_secret = self.api_secret
         )
         self.coin_pattern = ""
@@ -44,4 +44,3 @@ class bybit_api:
         # coin_source string トレード元
         self.coin_pattern = coin_target + coin_source
     
-    def order_buy(self, usd):
