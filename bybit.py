@@ -34,10 +34,10 @@ class bybit_api:
             callback = tickers_callback
         )
     
-    def tickers_callback(self, message) -> "ティッカーWebSocketのコールバック関数":
+    def tickers_callback(self, message:"入力") -> "ティッカーWebSocketのコールバック関数":
         self.price = float(message["data"]["lastPrice"])
     
-    def trade_coin(self, coin_target:"string 取引対象", coin_source"string 取引元") -> "取引パターンを設定":
+    def trade_coin(self, coin_target:"string 取引対象", coin_source:"string 取引元") -> "取引パターンを設定":
         self.coin_pattern = str(coin_target) + str(coin_source)
     
     
