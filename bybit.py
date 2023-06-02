@@ -41,7 +41,7 @@ class bybit_api:
         self.coin_pattern = str(coin_target) + str(coin_source)
 
 if __name__ == "__main__":
-    bybit = bybit_api("ETH", "USDT", true)
+    bybit = bybit_api("ETH", "USDT", True)
     
     
     
