@@ -8,18 +8,12 @@ import line
 #import slack_http as slack
 
 class bybit_api:
-    def __init__(self, coin_target, coin_source, is_test):
-        # coin_target string
-        # coin_source string
-        # is_test bool
+    def __init__(self, coin_target:"string 取引対象", coin_source:"string 取引元", is_test:"bool テストネットを使用するか"):
+        self.envtest = ""
         if is_test:
-            # testnet mode
-            self.api_key = os.environ["Testnet_ByBit_API_Key"]
-            self.secret = os.environ["Testnet_ByBit_Secret_Key"]
-        else :
-            # realnet mode
-            self.api_key = os.environ["ByBit_API_Key"]
-            self.api_secret = os.environ["ByBit_Secret_Key"]
+            self.envtest = "Testnet_"
+        self.api_key = os.environ[self.envtest+"ByBit_API_Key"]
+        self.api_secret = os.environ[self.envtest+"ByBit_Secret_Key"]
         self.ws = WebSocket(
           # websocket requests
           test = is_test,
@@ -35,12 +29,29 @@ class bybit_api:
         self.coin_pattern = ""
         trade_coin(coin_terget, coin_source)
         self.price = 0
+        self.ws(
+            symbol = self.coin_pattern,
+            callback = tickers_callback
+        )
     
-    def tickers_callback(self, message):
+    def tickers_callback(self, message) -> "ティッカーWebSocketのコールバック関数":
         self.price = float(message["data"]["lastPrice"])
     
-    def trade_coin(self, coin_target, coin_source):
-        # coin_target string トレード対象
-        # coin_source string トレード元
-        self.coin_pattern = coin_target + coin_source
+    def trade_coin(self, coin_target:"string 取引対象", coin_source"string 取引元") -> "取引パターンを設定":
+        self.coin_pattern = str(coin_target) + str(coin_source)
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
