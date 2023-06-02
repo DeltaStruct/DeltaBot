@@ -39,7 +39,9 @@ class bybit_api:
     
     def trade_coin(self, coin_target:"string 取引対象", coin_source:"string 取引元") -> "取引パターンを設定":
         self.coin_pattern = str(coin_target) + str(coin_source)
-    
+
+if __name__ == "__main__":
+    bybit = bybit_api("ETH", "USDT", true)
     
     
     
