@@ -36,11 +36,10 @@ class bybit_api:
         self.coin_pattern = ""
         self.trade_coin(coin_target, coin_source)
         self.price = 0
-        '''
-        self.ws(
+        self.ws.ticker_stream(
             symbol = self.coin_pattern,
-            callback = tickers_callback
-        )'''
+            callback = tickers_callback,
+        )
 
 if __name__ == "__main__":
     bybit = bybit_api("ETH", "USDT", True)
