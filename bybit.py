@@ -35,7 +35,7 @@ class bybit_api:
             api_secret = self.api_secret,
         )
         self.coin_pattern = ""
-        self.trade_coin(coin_terget, coin_source)
+        self.trade_coin(coin_target, coin_source)
         self.price = 0
         '''
         self.ws(
