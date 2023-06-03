@@ -5,7 +5,7 @@ from time import sleep
 from pybit.unified_trading import HTTP
 from pybit.unified_trading import WebSocket
 import line
-#import slack_http as slack
+import slack
 
 class bybit_api:
     def __init__(self, coin_target:"string 取引対象", coin_source:"string 取引元", is_test:"bool テストネットを使用するか"):
@@ -42,6 +42,8 @@ class bybit_api:
 
 if __name__ == "__main__":
     bybit = bybit_api("ETH", "USDT", True)
+    slack = slack.HTTP("#random")
+    slack.send("こんにちは！これちゃんとさぶみっとできてるかな〜")
     
     
     
