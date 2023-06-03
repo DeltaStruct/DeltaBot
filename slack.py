@@ -4,7 +4,7 @@ import datetime
 
 from slack_bolt import App
 from slack_bolt.adapter.socket_mode import SocketModeHandler
-from slack_sdk.webhook import Webhook_Slack
+from slack_sdk.webhook import WebhookClient as Webhook_Slack
  
 app = App(token=os.environ["Slack_BOT_API_Key"])
 @app.message('test')
