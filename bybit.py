@@ -20,11 +20,7 @@ class bybit_api:
             self.envtest = "Testnet_"
         self.api_key = os.environ[self.envtest+"ByBit_API_Key"]
         self.api_secret = os.environ[self.envtest+"ByBit_Secret_Key"]
-        self.ws = WebSocket(
-            # websocket requests
-            testnet = is_test,
-            channel_type="linear",
-        )
+        # WebSocketなんか国がブロックされてる。アメリカを？？？
         self.session = HTTP(
             # HTTP requests
             testnet = is_test,
@@ -34,15 +30,18 @@ class bybit_api:
         self.coin_pattern = ""
         self.trade_coin(coin_target, coin_source)
         self.price = 0
-        self.ws.ticker_stream(
-            symbol = self.coin_pattern,
-            callback = tickers_callback,
+    def get_tickers(self):
+        res = session.get_tickers(
+            category="inverse",
+            symbol="BTCUSD",
         )
+        return res
 
 if __name__ == "__main__":
     bybit = bybit_api("ETH", "USDT", True)
     slack = slack.http("#random")
     slack.send("こんにちは！これちゃんとさぶみっとできてるかな〜")
+    slack.send(bybit.get_tickers()["result"]["list"][0][0]["lastPrice"])
     
     
     
