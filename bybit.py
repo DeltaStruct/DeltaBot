@@ -19,14 +19,14 @@ class bybit_api:
             testnet = is_test,
             channel_type="linear",
             api_key = self.api_key,
-            api_secret = self.api_secret
+            api_secret = self.api_secret,
         )
         self.session = HTTP(
             # HTTP requests
             testnet = is_test,
             channel_type="linear",
             api_key = self.api_key,
-            api_secret = self.api_secret
+            api_secret = self.api_secret,
         )
         self.coin_pattern = ""
         trade_coin(coin_terget, coin_source)
