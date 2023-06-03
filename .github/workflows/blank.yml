@@ -43,3 +43,5 @@ jobs:
           Slack_Webhook_URL: ${{secrets.Slack_Webhook_URL}}
           Gmail_Address: ${{secrets.Gmail_Address}}
           Gmail_Password: ${{secrets.Gmail_Password}}
+          Testnet_ByBit_API_Key: ${{secrets.Testnet_ByBit_API_Key}}
+          Testnet_ByBit_Secret_Key: ${{secrets.Testnet_ByBit_Secret_Key}}
