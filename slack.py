@@ -22,7 +22,7 @@ class http:
     
     def send(self, msg:"string"):
         self.rensponse = self.client.chat_postMessage(text=msg, channel=self.ch)
-		print("slack_api msg: "+msg+' '+self.rensponse)
+	    print("slack_api msg: "+msg+' '+self.rensponse)
         
 if __name__ == "__main__":
     main()
