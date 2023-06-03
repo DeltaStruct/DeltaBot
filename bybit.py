@@ -15,14 +15,16 @@ class bybit_api:
         self.api_key = os.environ[self.envtest+"ByBit_API_Key"]
         self.api_secret = os.environ[self.envtest+"ByBit_Secret_Key"]
         self.ws = WebSocket(
-          # websocket requests
-          test = is_test,
-          api_key = self.api_key,
-          api_secret = self.api_secret
+            # websocket requests
+            test = is_test,
+            channel_type="linear",
+            api_key = self.api_key,
+            api_secret = self.api_secret
         )
         self.session = HTTP(
             # HTTP requests
             test = is_test,
+            channel_type="linear",
             api_key = self.api_key,
             api_secret = self.api_secret
         )
