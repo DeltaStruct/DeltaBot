@@ -25,7 +25,6 @@ class bybit_api:
         self.session = HTTP(
             # HTTP requests
             testnet = is_test,
-            channel_type="linear",
             api_key = self.api_key,
             api_secret = self.api_secret,
         )
