@@ -18,7 +18,7 @@ def main():
 class http:
     def __init__(self, ch:"string"):
         self.ch = str(ch)
-        self.client = Webhook_Slack(token=os.environ["Slack_BOT_API_Key"])
+        self.client = Webhook_Slack(os.environ["Slack_BOT_API_Key"])
     
     def send(self, msg:"string"):
         self.client.chat_postMessage(text=msg, channel=self.ch)
