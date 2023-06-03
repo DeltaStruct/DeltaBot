@@ -14,13 +14,14 @@ class bybit_api:
             self.envtest = "Testnet_"
         self.api_key = os.environ[self.envtest+"ByBit_API_Key"]
         self.api_secret = os.environ[self.envtest+"ByBit_Secret_Key"]
+        '''
         self.ws = WebSocket(
             # websocket requests
             testnet = is_test,
             channel_type="linear",
             api_key = self.api_key,
             api_secret = self.api_secret,
-        )
+        )'''
         self.session = HTTP(
             # HTTP requests
             testnet = is_test,
@@ -31,10 +32,11 @@ class bybit_api:
         self.coin_pattern = ""
         trade_coin(coin_terget, coin_source)
         self.price = 0
+        '''
         self.ws(
             symbol = self.coin_pattern,
             callback = tickers_callback
-        )
+        )'''
     
     def tickers_callback(self, message:"入力") -> "ティッカーWebSocketのコールバック関数":
         self.price = float(message["data"]["lastPrice"])
