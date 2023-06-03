@@ -24,8 +24,6 @@ class bybit_api:
             # websocket requests
             testnet = is_test,
             channel_type="linear",
-            api_key = self.api_key,
-            api_secret = self.api_secret,
         )
         self.session = HTTP(
             # HTTP requests
