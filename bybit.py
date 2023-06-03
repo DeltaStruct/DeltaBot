@@ -31,7 +31,7 @@ class bybit_api:
         self.trade_coin(coin_target, coin_source)
         self.price = 0
     def get_tickers(self):
-        res = session.get_tickers(
+        res = self.session.get_tickers(
             category="inverse",
             symbol="BTCUSD",
         )
