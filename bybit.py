@@ -8,6 +8,12 @@ import line
 import slack
 
 class bybit_api:
+    def tickers_callback(self, message:"入力") -> "ティッカーWebSocketのコールバック関数":
+        self.price = float(message["data"]["lastPrice"])
+    
+    def trade_coin(self, coin_target:"string 取引対象", coin_source:"string 取引元") -> "取引パターンを設定":
+        self.coin_pattern = str(coin_target) + str(coin_source)
+        
     def __init__(self, coin_target:"string 取引対象", coin_source:"string 取引元", is_test:"bool テストネットを使用するか"):
         self.envtest = ""
         if is_test:
@@ -36,12 +42,6 @@ class bybit_api:
             symbol = self.coin_pattern,
             callback = tickers_callback
         )'''
-    
-    def tickers_callback(self, message:"入力") -> "ティッカーWebSocketのコールバック関数":
-        self.price = float(message["data"]["lastPrice"])
-    
-    def trade_coin(self, coin_target:"string 取引対象", coin_source:"string 取引元") -> "取引パターンを設定":
-        self.coin_pattern = str(coin_target) + str(coin_source)
 
 if __name__ == "__main__":
     bybit = bybit_api("ETH", "USDT", True)
