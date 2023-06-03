@@ -4,7 +4,7 @@ import datetime
 
 from slack_bolt import App
 from slack_bolt.adapter.socket_mode import SocketModeHandler
-from slack_sdk.webhook import WebhookClient as Webhook_Slack
+from slack_sdk.web import WebClient as Web_Slack
  
 app = App(token=os.environ["Slack_BOT_API_Key"])
 @app.message('test')
@@ -18,10 +18,11 @@ def main():
 class http:
     def __init__(self, ch:"string"):
         self.ch = str(ch)
-        self.client = Webhook_Slack(os.environ["Slack_BOT_API_Key"])
+        self.client = Web_Slack(token=os.environ["Slack_BOT_API_Key"])
     
     def send(self, msg:"string"):
-        self.client.chat_postMessage(text=msg, channel=self.ch)
+        self.rensponse = self.client.chat_postMessage(text=msg, channel=self.ch)
+		print("slack_api msg: "+msg+' '+self.rensponse)
         
 if __name__ == "__main__":
     main()
