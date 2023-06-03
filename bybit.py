@@ -45,7 +45,7 @@ class bybit_api:
 
 if __name__ == "__main__":
     bybit = bybit_api("ETH", "USDT", True)
-    slack = slack.HTTP("#random")
+    slack = slack.http("#random")
     slack.send("こんにちは！これちゃんとさぶみっとできてるかな〜")
     
     
