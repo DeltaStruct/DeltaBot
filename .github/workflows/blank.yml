@@ -36,8 +36,8 @@ jobs:
         uses: Boostport/setup-cloudflare-warp@v1
         with:
           organization: DeltaStruct
-          auth_client_id: ${{ secrets.CLOUDFLARE_AUTH_CLIENT_ID }}
-          auth_client_secret: ${{ secrets.CLOUDFLARE_AUTH_CLIENT_SECRET }}
+          auth_client_id: ${{ secrets.Cloudflare_Auth_Client_ID }}
+          auth_client_secret: ${{ secrets.Cloudflare_Auth_Client_Secret }}
         run: |
           # 定期実行するファイルを指定。・・・③
           python bybit.py
